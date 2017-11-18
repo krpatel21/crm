@@ -8,8 +8,12 @@
 </head>
 <body>
 <h1>Hello World</h1>
-<div th:each="user : ${users}" class="col s12 l4">
+<div th:each="user : ${users}">
     <h2 th:text="'username:' + ${user.username}"></h2>
+</div>
+
+<div th:each="worker : ${workers}">
+    <h2 th:text="'amount:' + ${worker.amount}"></h2>
 </div>
 </body>
 </html>
