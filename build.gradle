@@ -25,15 +25,13 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile('org.springframework:spring-orm:5.0.1.RELEASE')
+	compile('org.springframework:spring-orm:4.2.4.RELEASE')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.hibernate:hibernate-core:5.2.12.Final')
-	compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.12.Final'
+	compile('org.hibernate:hibernate-core:5.1.0.Final')
 	compile('org.apache.tomcat:tomcat-dbcp:9.0.1')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.projectlombok:lombok')
-//	compile 'mysql:mysql-connector-java'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

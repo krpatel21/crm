@@ -20,16 +20,6 @@ public class DataConfig {
     @Autowired
     private Environment env;
 
-//    @Bean
-//    public LocalSessionFactoryBean sessionFactory() {
-//        Resource config = new ClassPathResource("hibernate.cfg.xml");
-//        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-//        sessionFactory.setConfigLocation(config);
-//        sessionFactory.setPackagesToScan(env.getProperty("crm.entity.package"));
-//        sessionFactory.setDataSource(dataSource());
-//        return sessionFactory;
-//    }
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
