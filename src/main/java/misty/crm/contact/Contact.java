@@ -1,10 +1,12 @@
-package misty.crm.model;
+package misty.crm.contact;
+
+import misty.crm.config.CrmEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-public class Contact extends CrmEntity{
+public class Contact extends CrmEntity {
 
     @Column
     private String firstName;

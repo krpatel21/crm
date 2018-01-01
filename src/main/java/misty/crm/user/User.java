@@ -1,5 +1,6 @@
-package misty.crm.model;
+package misty.crm.user;
 
+import misty.crm.role.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

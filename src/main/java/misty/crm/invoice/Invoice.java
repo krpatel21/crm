@@ -1,4 +1,6 @@
-package misty.crm.model;
+package misty.crm.invoice;
+
+import misty.crm.user.User;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

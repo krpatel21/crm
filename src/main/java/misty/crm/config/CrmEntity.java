@@ -1,5 +1,6 @@
-package misty.crm.model;
+package misty.crm.config;
 
+import misty.crm.user.User;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;

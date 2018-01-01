@@ -1,6 +1,5 @@
-package misty.crm.dao;
+package misty.crm.user;
 
-import misty.crm.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

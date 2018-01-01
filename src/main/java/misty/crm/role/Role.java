@@ -1,4 +1,4 @@
-package misty.crm.model;
+package misty.crm.role;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

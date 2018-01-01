@@ -1,7 +1,5 @@
-package misty.crm.service;
+package misty.crm.user;
 
-import misty.crm.dao.UserDao;
-import misty.crm.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
