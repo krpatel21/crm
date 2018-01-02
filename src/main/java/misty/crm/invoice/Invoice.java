@@ -1,15 +1,13 @@
 package misty.crm.invoice;
 
+import misty.crm.core.CrmEntity;
 import misty.crm.user.User;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class Invoice {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Invoice extends CrmEntity {
     @Column
     private BigDecimal amount;
     @ManyToOne
@@ -17,14 +15,7 @@ public class Invoice {
     private User user;
 
     public Invoice() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        super();
     }
 
     public BigDecimal getAmount() {

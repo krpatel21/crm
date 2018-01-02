@@ -1,23 +1,32 @@
 package misty.crm.contact;
 
-import misty.crm.config.CrmEntity;
+import misty.crm.core.CrmEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Contact extends CrmEntity {
 
     @Column
+    @NotNull
+    @Size(min = 1, max = 40)
     private String firstName;
     @Column
+    @NotNull
+    @Size(min = 1, max = 80)
     private String lastName;
     @Column
+    @Size(min = 1, max = 100)
     private String email;
     @Column
+    @Size(min = 1, max = 50)
     private String phone;
 
-    public Contact() {
+    protected Contact() {
+        super();
     }
 
     public String getFirstName() {

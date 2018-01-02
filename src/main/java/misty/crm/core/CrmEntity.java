@@ -1,16 +1,15 @@
-package misty.crm.config;
+package misty.crm.core;
 
 import misty.crm.user.User;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @MappedSuperclass
-public abstract class CrmEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public abstract class CrmEntity extends BaseEntity {
+
     @ManyToOne
     @JoinColumn(name = "creator_id")
     private User creator;
@@ -30,15 +29,8 @@ public abstract class CrmEntity {
     @Column
     private Timestamp viewedTime;
 
-    public CrmEntity() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    protected CrmEntity() {
+        super();
     }
 
     public User getCreator() {
