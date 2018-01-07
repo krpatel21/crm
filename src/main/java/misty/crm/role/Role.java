@@ -1,10 +1,9 @@
 package misty.crm.role;
 
 import misty.crm.core.BaseEntity;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import javax.persistence.Entity;
-
-@Entity
+@RepositoryRestResource(exported = false)
 public class Role extends BaseEntity {
     private String name;
 
