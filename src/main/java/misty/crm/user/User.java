@@ -1,78 +1,73 @@
 package misty.crm.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import misty.crm.core.BaseEntity;
-import misty.crm.role.Role;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.Size;
 
 @Entity
 public class User extends BaseEntity {
-    @Column(unique = true)
-    @Size(min = 8, max = 20)
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+    private String firstName;
+    private String lastName;
     private String username;
-    @Column(length = 100)
+    @JsonIgnore
     private String password;
-    @Column(nullable = false)
-    private boolean enabled;
-    @OneToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+    @JsonIgnore
+    private String[] roles;
 
-    public User() {
+    protected User() {
         super();
     }
 
-    public User(String username, String password) {
+    public User(String username, String firstName, String lastName, String password, String[] roles) {
+        this();
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
-        this.password = password;
+        setPassword(password);
+        this.roles = roles;
+    }
+
+    public void setPassword(String password) {
+        this.password = PASSWORD_ENCODER.encode(password);
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
     }
 }
