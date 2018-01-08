@@ -4,5 +4,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InvoiceDao extends PagingAndSortingRepository<Invoice, Long> {
+public interface InvoiceRepository extends PagingAndSortingRepository<Invoice, Long> {
 }
