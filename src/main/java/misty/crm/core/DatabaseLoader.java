@@ -24,7 +24,7 @@ public class DatabaseLoader implements ApplicationRunner {
     }
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         List<User> students = Arrays.asList(
                 new User("jacobproffer", "Jacob",  "Proffer", "password", new String[] {"ROLE_USER"}),
                 new User("mlnorman", "Mike",  "Norman", "password", new String[] {"ROLE_USER"}),

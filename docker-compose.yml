@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mysql-dev:
+    image: mysql:5.7.9
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: crm
+    ports:
+      - "3306:3306"
